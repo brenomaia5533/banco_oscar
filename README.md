@@ -43,16 +43,38 @@ resposta: a categoria "Actress" nunca deixou de existir. Portanto, não há um a
 
 6- O primeiro Oscar para melhor Atriz foi para quem? Em que ano?
 
+comando: select * from filmes;
+
+resposta: Janet Gaynor, em 1928
 
 
-7- Na coluna/campo "Vencedor", altere todos os valores com "Sim" para 1 e todos os valores "Não" para 0.
+7- Em qual edição do Oscar "Crash" ganhou o prêmio principal?
 
-8- Em qual edição do Oscar "Crash" ganhou o prêmio principal?
+comando: SELECT ano_filmagem FROM filmes WHERE nome_filme = 'Crash' 
+SELECT edicao_cerimonia FROM filmes WHERE ano_cerimonia = '2005' 
 
-9- Bom... dê um Oscar para um filme que merece muito, mas não ganhou.
+resposta: edição 78
 
-10- O filme Central do Brasil aparece no Oscar?
+8- Bom... dê um Oscar para um filme que merece muito, mas não ganhou.
 
-11- Inclua no banco 3 filmes que nunca foram nem nomeados ao Oscar, mas que merecem ser. 
+comando: 
+INSERT INTO filmes (id_filme, ano_filmagem, ano_cerimonia, edicao_cerimonia, nome_filme, vencedor) VALUES ('10396', '1976', '2023','93', 'Taxi Driver', 'Sim' );
 
-14 - Pensando no ano em que você nasceu: Qual foi o Oscar de melhor filme, Melhor Atriz e Melhor Diretor?
+
+9- O filme Central do Brasil aparece no Oscar?
+
+comando:
+SELECT COUNT(*) FROM filmes WHERE nome_filme = 'Central do Brasil';
+
+resposta: Não
+
+10- Inclua no banco 3 filmes que nunca foram nem nomeados ao Oscar, mas que merecem ser. 
+
+comando: 
+INSERT INTO filmes (nome_filme, ano_filmagem, vencedor) VALUES 
+('Dr.fantastico', '1964', 'Não'),
+('Need for speed', '2014', 'Não'),
+('Kung fu panda 4', '2024', 'Não');
+
+
+
